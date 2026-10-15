@@ -1,0 +1,170 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-bg-primary: #060D17;
+    --color-bg-secondary: #0B192C;
+    --color-bg-card: #0E1F36;
+    --color-border: #1E3A5F;
+    --color-teal: #14B8A6;
+    --color-emerald: #10B981;
+    --color-gold: #F59E0B;
+  }
+
+  body {
+    background-color: #060D17;
+    color: #F1F5F9;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', sans-serif;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0B192C;
+}
+::-webkit-scrollbar-thumb {
+  background: #1E3A5F;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #14B8A6;
+}
+
+/* Leaflet map styles */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.75rem;
+  background: #0B192C !important;
+}
+
+.leaflet-tile {
+  filter: brightness(0.72) invert(1) contrast(1.35) hue-rotate(200deg) saturate(0.35);
+}
+
+.leaflet-popup-content-wrapper {
+  background: #0E1F36 !important;
+  color: #F1F5F9 !important;
+  border: 1px solid #1E3A5F;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+}
+
+.leaflet-popup-tip {
+  background: #0E1F36 !important;
+}
+
+.leaflet-popup-close-button {
+  color: #94A3B8 !important;
+}
+
+.leaflet-popup-close-button:hover {
+  color: #14B8A6 !important;
+}
+
+.leaflet-control-attribution {
+  background: rgba(11, 25, 44, 0.85) !important;
+  color: #94A3B8 !important;
+  font-size: 10px !important;
+  padding: 2px 6px !important;
+  border-top-right-radius: 4px;
+  border: 1px solid rgba(30, 58, 95, 0.5) !important;
+  backdrop-filter: blur(4px);
+}
+
+.leaflet-control-attribution a {
+  color: #14B8A6 !important;
+  text-decoration: none;
+}
+
+.leaflet-control-attribution a:hover {
+  text-decoration: underline;
+}
+
+.leaflet-bar {
+  border: 1px solid #1E3A5F !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+  border-radius: 6px !important;
+  overflow: hidden;
+}
+
+.leaflet-bar a {
+  background-color: #0E1F36 !important;
+  color: #F1F5F9 !important;
+  border-bottom: 1px solid #1E3A5F !important;
+  transition: all 0.2s ease;
+}
+
+.leaflet-bar a:hover {
+  background-color: #1E3A5F !important;
+  color: #14B8A6 !important;
+}
+
+.leaflet-bar a.leaflet-disabled {
+  background-color: #0B192C !important;
+  color: #475569 !important;
+}
+
+.leaflet-control-scale-line {
+  background: rgba(11, 25, 44, 0.85) !important;
+  border: 1px solid #1E3A5F !important;
+  border-top: none !important;
+  color: #94A3B8 !important;
+  font-size: 10px !important;
+  padding: 1px 4px !important;
+  backdrop-filter: blur(4px);
+}
+
+/* Glassmorphism card utilities */
+.glass-panel {
+  background: rgba(14, 31, 54, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(30, 58, 95, 0.6);
+}
+
+.glass-panel-hover {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glass-panel-hover:hover {
+  border-color: rgba(20, 184, 166, 0.5);
+  box-shadow: 0 10px 30px -10px rgba(20, 184, 166, 0.15);
+}
+
+/* Subtle glowing badge */
+.glow-teal {
+  box-shadow: 0 0 15px rgba(20, 184, 166, 0.3);
+}
+
+.glow-emerald {
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.3);
+}
+
+/* Print Styles for official MRV Reports */
+@media print {
+  body {
+    background-color: white !important;
+    color: black !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .glass-panel {
+    background: white !important;
+    border: 1px solid #ccc !important;
+    box-shadow: none !important;
+  }
+}
